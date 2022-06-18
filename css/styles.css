@@ -1,0 +1,421 @@
+/* STANDARD CODE */
+*
+{
+    box-sizing: border-box;
+}
+
+body, html
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background: url("../images/background.jpg");
+}
+
+
+/* MAIN CODE */
+select
+{
+    width: 100%;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    width: 100%;
+    height: 34px;
+    margin-bottom: 10px;
+    transition: 1s;
+}
+
+
+form
+{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 10px;
+    width: 40%;
+    font-family: sans-serif;
+    opacity: 0.75;
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.75);
+
+}
+
+label
+{
+    display: block;
+    text-align: left;
+    margin: 2px 0 2px 0;
+    padding: 0;
+
+}
+
+input
+{
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    width: 100%;
+    height: 34px;
+    margin-bottom: 10px;
+    transition: 1s;
+}
+
+input:focus
+{
+    border-radius: 3px;
+    border: 1px solid lightgreen;
+}
+
+h2
+{
+    
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+
+button
+{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    opacity: 0.5;
+    color: black;
+    height: 40px;
+    width: 200px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover
+{
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+
+#verzoeken-h2
+{
+    opacity: 0.75;
+    width: 80%;
+    margin: 40px auto 0 auto;
+}
+
+#error-p
+{
+    text-align:center; 
+    color: red;
+}
+
+#container
+{
+    padding-top: 20px;
+    padding-left: 12%;
+}
+
+#request
+{
+    width: 20%;
+    border: 1px solid transparent;
+    display: inline-block;
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.75);
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: sans-serif;
+}
+
+#delete-button
+{
+    border: 1px solid red;
+    border-radius: 5px;
+    opacity: 0.4;
+    color: red;
+    display: block;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#log-button
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    opacity: 0.40;
+    color: black;
+    display: block;
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#back-button
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    opacity: 0.40;
+    color: black;
+    display: block;
+    height: 40px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 0.5%;
+    text-align: center;
+    width: 10%;
+    font-family: sans-serif;
+}
+
+#delete-button:hover
+{
+    opacity: 0.6;
+}
+
+#log-button:hover
+{
+    opacity: 0.6;
+}
+
+#back-button:hover
+{
+    opacity: 0.6;
+}
+
+#delete-form-button
+{
+    float: right;
+    width: 200px; 
+    margin-top: 10px; 
+    display: inline-block;
+    color: red;
+    border: 1px solid red;
+}
+
+#log-form-button
+{
+
+    width: 200px; 
+    margin-top: 0; 
+    margin-left: 8px;
+    display: inline-block;
+}
+
+
+#credits
+{
+    text-align: center; 
+    color: gray; 
+    font-family: sans-serif; 
+    font-weight: 100;
+}
+
+#all-forms
+{
+    display: inline-block;
+    width: 18%;
+    vertical-align: top;
+    margin-left: 0.5%;
+}
+
+#updated-div
+{
+    margin: 0 auto;
+    width: 78%;   
+    text-align: left; 
+}
+
+#button-allow
+{
+    display: block;
+    border: 1px solid green;
+    color: green;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#button-deny
+{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: 1px solid red;
+    color: red;
+    width: 100%;
+}
+
+#upload-button
+{
+
+    display: block;
+    border: 1px solid green;
+    color: green;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100%;    
+
+}
+@media only screen and (max-width: 1617px)
+{
+    #log-form-button
+    {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    #delete-form-button
+    {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+    #form-button-2
+    {
+        float: none;
+        width: 100%;
+    }
+    #form-button-1
+    {
+        float: none;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1500px)
+{
+    #request
+    {
+        width: 26.5%;
+    }
+}
+
+@media only screen and (max-width: 1347px)
+{
+    #all-forms
+    {
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 1024px)
+{
+    #request
+    {
+        width: 40%;
+    }
+    
+    #index-form
+    {
+        width: 60%;
+    }
+    
+    #index-form-2
+    {
+        width: 60%;
+    }
+    
+    #back-button
+    {
+        width: 15%;
+        margin-left: 1%;
+    }
+    #all-forms
+    {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 800px)
+{
+    #request
+    {
+        width: 85%;
+    }
+    
+    #index-form
+    {
+        width: 80%;
+    }
+    
+    #index-form-2
+    {
+        width: 80%;
+    }
+    
+    #container
+    {
+        padding-left: 8%;
+    }
+    
+    #log-form
+    {
+        width: 80%;
+    }
+    
+    #back-button
+    {
+        width: 25%;
+        margin-left: 3%;
+    }
+    #all-forms
+    {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 540px)
+{
+    #request
+    {
+        width: 85%;
+    }
+    
+    #index-form
+    {
+        width: 80%;
+    }
+    
+    #index-form-2
+    {
+        width: 80%;
+    }
+    
+    #container
+    {
+        padding-left: 4.5%;
+    }
+    
+    #log-form
+    {
+        width: 80%;
+    }
+    
+    #back-button
+    {
+        width: 25%;
+        margin-left: 3%;
+    }
+    #all-forms
+    {
+        width: 100%;
+    }
+}

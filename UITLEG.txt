@@ -1,0 +1,80 @@
+﻿SHADOW PANEL UITLEG
+@RRELIABLE X @SOSAEXPRESS
+——————————————————————————————————————————————————————————————————————————————————————————
+Benodigdheden ; 
+* Linux VPS ( ubuntu 16.04 64 bit )
+* Een domein
+* Putty / een andere sshclient ( https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html )
+* FileZilla (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+——————————————————————————————————————————————————————————————————————————————————————————
+Stap 1. Commands runnen in putty
+ sudo apt update
+ sudo apt install apache2
+ sudo a2dismod mpm_event
+ sudo a2enmod mpm_prefork
+ sudo systemctl restart apache2
+ sudo apt-get install mysql-server mysql-client
+ sudo systemctl stop mysql.service
+ sudo systemctl start mysql.service
+ sudo systemctl enable mysql.service
+ sudo mysql_secure_installation
+   (Nu krijg je deze vragen, antwoord met het antwoord dat naast : staat)
+     Enter current password for root (enter for none): Enter
+     Set root password? [Y/n]: Y
+     New password: Wachtwoord kiezen
+     Re-enter new password: Wachtwoord opnieuw invullen
+     Remove anonymous users? [Y/n]: Y
+     Disallow root login remotely? [Y/n]: Y
+     Remove test database and access to it? [Y/n]:  Y
+     Reload privilege tables now? [Y/n]:  Y
+ sudo apt install php libapache2-mod-php php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl php-mysql php-cli php-zip php-curl
+ sudo apt-get update
+ sudo apt-get install phpmyadmin
+   * NU WORD PHPMYADMIN GEINSTALLEERD , BIJ HET SCHERM WAAR apache2 en lighttpd STAAT ZORG
+     JE DAT HET VAKJE VOOR apache2 GESELECTEERD IS, JE DRUKT OP SPATIE EN DAARNA OP TAB EN 
+     BIJ OK WEER OP ENTER
+   * KLIK DAARNA BIJ ALLES OP YES EN ALS JE EEN WACHTWOORD MOET INVULLEN KIES EEN LANG 
+     WACHTWOORD MET HOOFDLETTERS, KLEINE LETTERS, EEN SPECIAAL TEKEN EN NUMMERS 
+     SCHRIJF DIT WACHTWOORD OP !!!!
+sudo service apache2 restart
+Stap 2. Database instellen
+    * NU GA JE NAAR PHPMYADMIN DOOR http://online-betalen.me/phpmyadmin
+* Klik op gebruikersaccounts en maak een nieuwe account aan , schrijf je gebruikersnaam en wachtwoord op !(heb je nodig)
+* Klik op databases en maak een nieuwe database aan , onthoud deze naam ! (die heb je later nodig)
+* Hierna zit je als het goed is in je database , klik dan op importeren en importeer het .sql
+  bestand dat je hebt gekregen bij je panel. (ALS DIT FOUT GAAT HEB JE IETS VERKEERDS INGESTELD)
+Stap 3. Andere putty commands
+ sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+ sudo apt-get update
+ sudo apt-get install nodejs
+ sudo apt-get install npm
+ sudo npm install -g bower
+ sudo a2enmod rewrite
+ sudo nano /etc/apache2/apache2.conf
+    Nu krijg je een groot tekst bestand te zien, je moet omlaag scrollen tot je de regel <Directory /var/www/> vind
+    Hier onder staat ; "AllowOverride None". Dit verander je naar ; "AllowOverride All"
+ sudo service apache2 restart
+Stap 4. SSL (slotje) installeren
+ sudo apt-get update
+ sudo apt-get install software-properties-common
+ sudo add-apt-repository universe
+ sudo add-apt-repository ppa:certbot/certbot
+ sudo apt-get update
+ sudo apt-get install certbot python3-certbot-apache
+ sudo certbot --apache
+Stap 5. De site uploaden
+Je begint natuurlijk met de bestanden van de panel te downloaden
+Hierna ga je naar de map required in de panel map , hier staat een bestand in dat
+   Connection.php heet. Dit open je en hier verander je wat na $userName staat in jouw
+   database gebruikersnaam (deze heb je bij stap 2 gekozen). $userPass is het wachtwoord
+   en bij $dbName verander je het naar de naam van je eigen database. 
+     ALS JE DIT VERKEERD INSTELT OF MET EEN TYPFOUT KAN JE NIET OP JE PANEL !!!
+Open FileZilla en klik dan boven root op ... om een map terug te gaan, 
+Hierna ga je naar de map /var/ 
+Hierin ga je naar de map /www/
+en hierin ga je naar de map /html/
+ Als het goed is zit hier 1 bestand in , namelijk index.html. Deze verwijder je.
+ Hierna sleep je alle bestanden uit de panel map in de /html/ map
+Hierna reboot je de server en ben je klaar voor gebruik door naar 
+  JOUWDOMEIN/index?wachtwoord=shadow te gaan , hier kan je ook je wachtwoord veranderen.
+------------------------------------VEEL CHOPSUCCES--------------------------------------
